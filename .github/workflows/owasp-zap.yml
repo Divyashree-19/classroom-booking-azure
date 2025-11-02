@@ -1,0 +1,14 @@
+name: OWASP ZAP Baseline Scan
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OWASP ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.9.0
+        with:
+          target: 'https://classroom-booking-frontend-d.azurewebsites.net/login'
