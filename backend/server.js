@@ -8,16 +8,7 @@ import bookingRoutes from "./routes/bookingRoutes.js";
 import searchRoutes from "./routes/searchRoutes.js"; // ✅ import the new route
 //const bookingRoutes = require("./routes/bookingRoutes");
 dotenv.config();
-// ✅ Application Insights setup
-import applicationInsights from "applicationinsights";
-applicationInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
-  .setAutoDependencyCorrelation(true)
-  .setAutoCollectRequests(true)
-  .setAutoCollectPerformance(true)
-  .setAutoCollectExceptions(true)
-  .setAutoCollectDependencies(true)
-  .setAutoCollectConsole(true, true)
-  .start();
+
 
 
 const app = express();
