@@ -2,16 +2,6 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import applicationInsights from "applicationinsights";
-applicationInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
-  .setAutoDependencyCorrelation(true)
-  .setAutoCollectRequests(true)
-  .setAutoCollectPerformance(true)
-  .setAutoCollectExceptions(true)
-  .setAutoCollectDependencies(true)
-  .setAutoCollectConsole(true, true)
-  .start();
-
 
 
 import express from "express";
