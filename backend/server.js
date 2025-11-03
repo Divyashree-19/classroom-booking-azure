@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import applicationInsights from "applicationinsights";
-applicationInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
+applicationInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
   .setAutoDependencyCorrelation(true)
   .setAutoCollectRequests(true)
   .setAutoCollectPerformance(true)
@@ -11,6 +11,7 @@ applicationInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
   .setAutoCollectDependencies(true)
   .setAutoCollectConsole(true, true)
   .start();
+
 
 
 import express from "express";
