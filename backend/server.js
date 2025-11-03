@@ -1,13 +1,30 @@
+// ✅ 1. Load environment variables first
+import dotenv from "dotenv";
+dotenv.config();
+
+import applicationInsights from "applicationinsights";
+applicationInsights.setup(process.env.APPINSIGHTS_INSTRUMENTATIONKEY)
+  .setAutoDependencyCorrelation(true)
+  .setAutoCollectRequests(true)
+  .setAutoCollectPerformance(true)
+  .setAutoCollectExceptions(true)
+  .setAutoCollectDependencies(true)
+  .setAutoCollectConsole(true, true)
+  .start();
+
+
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import dotenv from "dotenv";
+//import dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes.js";
 import roomRoutes from "./routes/roomRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
 import searchRoutes from "./routes/searchRoutes.js"; // ✅ import the new route
+
 //const bookingRoutes = require("./routes/bookingRoutes");
-dotenv.config();
+//dotenv.config();
+
 
 
 
